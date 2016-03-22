@@ -7,4 +7,5 @@ import java.util.Map;
  */
 public interface DemoUserService {
     Map getUserByMobile(String mobile);
+    User findByUserId(Integer uId);
 }

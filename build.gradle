@@ -40,7 +40,11 @@ dependencies {
     compile 'mysql:mysql-connector-java:5.1.36'
     compile 'com.h2database:h2:1.4.189'
     compile 'org.apache.commons:commons-dbcp2:2.1'
+    compile 'commons-pool:commons-pool:1.6'
+    compile 'org.mybatis:mybatis:3.2.8'
+    compile 'org.mybatis:mybatis-spring:1.2.4'
     compile 'com.alibaba:fastjson:1.2.6'
+    compile 'org.springframework.boot:spring-boot-starter-jdbc'
 
     testCompile group: 'org.testng', name: 'testng', version: '6.9.8'
     testCompile 'com.jayway.jsonpath:json-path:2.0.0'
