@@ -1,4 +1,4 @@
-*.xml
+Gradle*.xml
 *.iml
 *.log
 *.classpath
