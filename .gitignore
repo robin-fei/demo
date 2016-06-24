@@ -5,3 +5,8 @@ Gradle*.xml
 *.class
 *.bin
 *.lock
+*.jar
+*.bat
+*.xml
+*.zip
+*.tar
