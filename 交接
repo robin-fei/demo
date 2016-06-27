@@ -13,10 +13,13 @@ cas-server/
 CRM系统
 修复后续BUG
 新版本的开发请找黄斌排功能，定计划
-集成了权限控制，现有三种角色：
+集成了权限控制，现有5种角色：
 CMS:线索系统:客服
 CMS:线索系统:销售专员
 CMS:线索系统:销售主管
+商家平台-公司专员
+商家平台-管理员
+可以同时拥有几种角色，角色不同，可操作内容不同
 微信开发
 新活动开发
 权限系统
@@ -26,8 +29,27 @@ weacar-privilege-web 管理界面 http://portal.weacar.com/controller/main
 
 
 网站：
-维护运营活动文章article表，上线和下线活动
+维护运营文章article表，上线新活动和下线旧活动，比较特殊的微信活动等
+维护汽车之家网页爬虫及后续新功能开发，路径：weacar-admin/src/main/resources/scripts
+省心宝网页抓取脚本维护及后续新功能开发，定期更新weacar_www.sxb_sales_car_detail表，因为报价是每天1个价的，路径：weacar-admin/src/main/resources/scripts/nodejs
+
 小二后台：
-网站新增活动对应的新增菜单
+支持网站新功能的管理菜单
+
+微信系统
+定期维护公众号菜单，上线和下线一些菜单
+
 
 crm系统：
+销售和渠道那边报过来的bug修复
+调整权限系统中的账户、角色及可操作菜单内容
+
+
+商家平台：
+bug修复及后续新功能支持
+
+
+定期关注七牛、云片平台财务状况及可用性
+定期关注各个系统日志、磁盘空间、内存、cpu、网络，可以使用第3方工具，如yourkit java profiler
+定期关注mysql运行状态，尤其是慢查询
+
