@@ -1,4 +1,4 @@
-网站
+网站平台(weacar.com，开发环境：dev.weacar.com)
 运营工作
 新增品牌：数据库里手动插入一条brand数据，图片让设计做一下，放到七牛
 限时特卖：每周的限时特卖数据需要手动查到数据库，上次已经让你做过
@@ -6,12 +6,19 @@
 运维工作：
 定期关注下七牛、云片的账号，钱不够，要充钱
 定期关注下阿里云服务器，特别是硬盘空间
-小二后台
+微信环境开发
+新活动开发
+其他：
+维护运营文章article表，上线新活动和下线旧活动，比较特殊的微信活动等
+维护汽车之家网页爬虫及后续新功能开发，路径：weacar-admin/src/main/resources/scripts
+省心宝网页抓取脚本维护及后续新功能开发，定期更新weacar_www.sxb_sales_car_detail表，因为报价是每天1个价的，路径：weacar-admin/src/main/resources/scripts/nodejs，crontab已经新增了计划：0 2 * * * /root/source_code/tool/nodejs/reqsxb.sh &，每天晚上2点运行，nodejs服务端进程启动脚本run.sh，已经在121.41.122.138启动
+小二后台(admin-xiaoer.weacar.com，开发环境：admin-xiaoer-dev.weacar.com)
 都是些增删改查，
 两个地方要关注下：一个是新增车型（有个爬取汽车之家数据的脚本），还有个就是权限认证，集成的是cas（部署在小二后台那台服务器上）
 cas-server/
-CRM系统
-修复后续BUG
+支持网站新功能的管理菜单开发
+CRM系统(devcrm.weacar.com)
+销售和渠道那边报过来的BUG修复
 新版本的开发请找黄斌排功能，定计划
 集成了权限控制，现有5种角色：
 CMS:线索系统:客服
@@ -20,36 +27,17 @@ CMS:线索系统:销售主管
 商家平台-公司专员
 商家平台-管理员
 可以同时拥有几种角色，角色不同，可操作内容不同
-微信开发
-新活动开发
-权限系统
+商家平台(a.weacar.com)
+bug修复支持及后续新功能开发
+微信公众号系统(/bonus/christmas)
+定期维护公众号菜单，上线和下线一些菜单
+权限系统(portal.weacar.com)
 weacar-cloud-registry  服务发现服务器   http://weacar-cloud-registry.weacar.com/
 weacar-privilege-api-web 其他系统会restful调用这个服务
 weacar-privilege-web 管理界面 http://portal.weacar.com/controller/main
-
-
-网站：
-维护运营文章article表，上线新活动和下线旧活动，比较特殊的微信活动等
-维护汽车之家网页爬虫及后续新功能开发，路径：weacar-admin/src/main/resources/scripts
-省心宝网页抓取脚本维护及后续新功能开发，定期更新weacar_www.sxb_sales_car_detail表，因为报价是每天1个价的，路径：weacar-admin/src/main/resources/scripts/nodejs
-
-小二后台：
-支持网站新功能的管理菜单
-
-微信系统
-定期维护公众号菜单，上线和下线一些菜单
-
-
-crm系统：
-销售和渠道那边报过来的bug修复
+其他：
 调整权限系统中的账户、角色及可操作菜单内容
-
-
-商家平台：
-bug修复及后续新功能支持
-
-
-定期关注七牛、云片平台财务状况及可用性
+定期关注七牛(qiniu.com)、云片平台(www.yunpian.com)财务状况及可用性
 定期关注各个系统日志、磁盘空间、内存、cpu、网络，可以使用第3方工具，如yourkit java profiler
 定期关注mysql运行状态，尤其是慢查询
-
+定期关注阿里云管理平台(home.console.aliyun.com)及财务状况
