@@ -1,12 +1,6 @@
-Gradle*.xml
+target/
+.idea
+.mvn
 *.iml
-*.log
-*.classpath
-*.class
-*.bin
-*.lock
-*.jar
-*.bat
-*.xml
-*.zip
-*.tar
+build
+.gradle

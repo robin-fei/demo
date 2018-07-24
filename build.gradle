@@ -7,15 +7,19 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.7.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.3.RELEASE")
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'idea'
-apply plugin: 'spring-boot'
+apply plugin: 'maven'
+apply plugin: 'org.springframework.boot'
 
+group='com.robin.demo'
+version='1.0-SNAPSHOT'
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenLocal()
@@ -24,17 +28,17 @@ repositories {
 
 dependencies {
     // tag::jetty[]
-    compile("org.springframework.boot:spring-boot-starter-web") {
-        exclude module: "spring-boot-starter-tomcat"
+    compile("org.springframework.boot:spring-boot-starter-web:2.0.3.RELEASE") {
+        //exclude module: "spring-boot-starter-tomcat"
     }
-    compile("org.springframework.boot:spring-boot-starter-jetty")
+    //compile("org.springframework.boot:spring-boot-starter-jetty:2.0.3.RELEASE")
     // end::jetty[]
     // tag::actuator[]
-    compile("org.springframework.boot:spring-boot-starter-actuator")
-    compile("org.springframework.boot:spring-boot-starter-aop")
-    compile("org.springframework:spring-context-support")
-    compile("org.springframework:spring-tx")
-    compile "org.springframework:spring-jdbc"
+    compile("org.springframework.boot:spring-boot-starter-actuator:2.0.3.RELEASE")
+    compile("org.springframework.boot:spring-boot-starter-aop:2.0.3.RELEASE")
+    compile("org.springframework:spring-context-support:5.0.7.RELEASE")
+    compile("org.springframework:spring-tx:5.0.7.RELEASE")
+    compile "org.springframework:spring-jdbc:5.0.7.RELEASE"
     // end::actuator[]
     compile('org.freemarker:freemarker:2.3.23')
     compile 'mysql:mysql-connector-java:5.1.36'
@@ -44,12 +48,13 @@ dependencies {
     compile 'org.mybatis:mybatis:3.2.8'
     compile 'org.mybatis:mybatis-spring:1.2.4'
     compile 'com.alibaba:fastjson:1.2.6'
-    compile 'org.springframework.boot:spring-boot-starter-jdbc'
+    compile 'org.apache.tomcat:tomcat-jdbc:9.0.1'
+    compile 'org.springframework.boot:spring-boot-starter-jdbc:2.0.3.RELEASE'
 
     testCompile group: 'org.testng', name: 'testng', version: '6.9.8'
     testCompile 'com.jayway.jsonpath:json-path:2.0.0'
-    testCompile("org.springframework.boot:spring-boot-starter-test")
-    testCompile "org.springframework:spring-test"
+    testCompile("org.springframework.boot:spring-boot-starter-test:2.0.3.RELEASE")
+    testCompile "org.springframework:spring-test:5.0.7.RELEASE"
 }
 
 test {
@@ -57,4 +62,19 @@ test {
         suites 'src/test/resources/testng.xml'
         useDefaultListeners = true
     }
+}
+
+task writeNewPom << {
+    pom {
+        project {
+            inceptionYear '2008'
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+        }
+    }.writeTo("$buildDir/pom.xml")
 }
